@@ -1,18 +1,30 @@
 import React from 'react'
 import './css/estilos.css'
+import Usuarios from './components/Usuarios'
+import Footer from './components/Footer'
+import Boton from './components/Boton'
+import Boton2 from './components/Boton2'
 
 const App = () => {
 
-    const saludo = "React - INTECAP"
-    const nombre ="Byron Mauricio Palencia Blanco"
-
+  const sesion = false;
 
   return (
     <>
-        <h1 className='titulo'>{saludo} <br /> {nombre}</h1>
-    
-    </>
+      {sesion ?
+        <>
+          <Usuarios />
+          <Footer />
+        </> :
+        <>
+          <h1 className='titulo' style={{ color: "red" }}>Debes Iniciar Sesión</h1>
+          <Boton />
+          <Boton2 />
+          <Footer />
+        </>
+      }
 
+    </>
   )
 }
 
